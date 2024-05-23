@@ -1,40 +1,16 @@
-
+import { subscribers, subscribe, subscribers } from "./subscribe.js";
+import { state, dispatch } from "./dispatch.js";
+ 
 // initialise factory function createStore()
 export const createStore = ()=>{
-    const state= {count: 0};
-    const subscribers = [];
+    state;                // count = 0
+    subscribers;          // empty array
     
     const getState = () => state;    // Returns the current state
 
-    const dispatch = (action) =>{
+    dispatch();    // Function to dispatch actions and update the state
 
-        switch(action){
-            case 'ADD':
-                state.count += 1;           // Increment the count when the action type is 'ADD'
-                break;
-            case 'SUBTRACT':               // Decrement the count when the action type is 'SUBTRACT'
-                state.count -= 1;
-                break;
-            case 'RESET':
-                state.count = 0;         // Reset the count to 0
-                break;
-            default:
-                throw new Error('Wrong selection/type');            // Log an error message           
-
-        }
-        // Notify all subscribed functions of the state change
-        notifySubscribers();
-
-    };
-
-    const subscribe =(callback) =>{      // // Function to subscribe to state changes
-        subscribers.push(callback);      //Accepts a function that gets called whenever the state changes. 
-                               
-    };
-
-    const notifySubscribers = ()=>{
-        subscribers.forEach(callback => callback(getState()));
-    };
+    subscribe();     /// Function to subscribe to state changes
 
     return {
         getState,
