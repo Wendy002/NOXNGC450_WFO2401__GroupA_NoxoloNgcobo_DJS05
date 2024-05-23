@@ -5,13 +5,13 @@
 */
 
 /**
- * @callback Update
+ * @callback Dispatch
  * @param {Action}
 */
 
 /**
  * @typedef {object} Store
- * @prop {Update} update
+ * @prop {Dispatch} dispatch
  * @prop {Subscribe} subscribe
  */
 
