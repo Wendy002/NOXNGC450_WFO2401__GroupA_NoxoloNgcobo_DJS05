@@ -26,7 +26,7 @@ const createStore = ()=>{
 
     const dispatch = (action) =>{
 
-        switch(action.type){
+        switch(action){
             case 'ADD':
                 state.count += 1;           // Increment the count when the action type is 'ADD'
                 break;
@@ -70,5 +70,16 @@ store.subscribe(state => console.log('Changed state: ', state)); // changes stat
 if(!document.hidden){
     console.log('Initial state: ', store.getState());   // Output: { count: 0 }
 
+    store.dispatch('ADD');
+    // Changed state: { count: 1 }
+    
+    store.dispatch('ADD');
+     // Changed state: { count: 2 }
+
+    store.dispatch('SUBTRACT');
+    // Changed state: { count: 1 }
+
+    store.dispatch('RESET');
+    // Changed state: { count: 0 }
 }
 
