@@ -20,4 +20,7 @@
 const createStore = ()=>{
     const state= {};
     const subscribers = [];
+    
+    const getState = () => state;
+    
 }
