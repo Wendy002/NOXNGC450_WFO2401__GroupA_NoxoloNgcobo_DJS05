@@ -47,7 +47,7 @@ const createStore = ()=>{
 
     const subscribe =(callback) =>{      // // Function to subscribe to state changes
         subscribers.push(callback);      //Accepts a function that gets called whenever the state changes. 
-        console.log('Changed state: ', callback);                               //This function should log the new state to the console.
+                               
     };
 
     const notifySubscribers = ()=>{
@@ -62,4 +62,7 @@ const createStore = ()=>{
 
 };
 
-const store = createStore(); // 
+const store = createStore(); // create create store obj
+
+store.subscribe(state => console.log('Changed state: ', state)); // changes state of count everytime dispatch is called
+console.log('Initial state: ',store.getState());   // Output: { count: 0 }
