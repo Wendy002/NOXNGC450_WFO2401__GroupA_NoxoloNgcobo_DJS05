@@ -11,7 +11,8 @@
 
 /**
  * @typedef {object} Store
- * @props {Update} update
+ * @prop {Update} update
+ * @prop {Subscribe} subscribe
  */
 
 
@@ -46,6 +47,12 @@ const createStore = ()=>{
         subscribers.push(callback);      //Accepts a function that gets called whenever the state changes. 
         console.log('Changed state: ', callback);                               //This function should log the new state to the console.
     }
+
+    return {
+        getState,
+        dispatch,           // return methods
+        subscribe
+    };
 
 
 }
