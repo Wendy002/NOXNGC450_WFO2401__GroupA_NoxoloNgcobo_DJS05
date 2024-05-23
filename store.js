@@ -1,4 +1,4 @@
-import { subscribers, subscribe, subscribers } from "./subscribe.js";
+import { subscribers, subscribe} from "./subscribe.js";
 import { state, dispatch } from "./dispatch.js";
  
 // initialise factory function createStore()
