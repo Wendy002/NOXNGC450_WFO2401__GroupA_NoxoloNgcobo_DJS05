@@ -1,7 +1,5 @@
 import { createStore } from "./store.js";
 
-
-
 /** 
  * @callback Action
  * @param {State}
