@@ -40,6 +40,11 @@ const createStore = ()=>{
 
         }
 
+    };
+
+    const subscribe =(callback) =>{      // // Function to subscribe to state changes
+        subscribers.push(callback);      //Accepts a function that gets called whenever the state changes. 
+        console.log('Changed state: ', callback);                               //This function should log the new state to the console.
     }
 
 
