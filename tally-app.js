@@ -40,6 +40,8 @@ const createStore = ()=>{
                 throw new Error('Wrong selection/type');            // Log an error message           
 
         }
+        // Notify all subscribed functions of the state change
+        notifySubscribers();
 
     };
 
@@ -48,7 +50,7 @@ const createStore = ()=>{
         console.log('Changed state: ', callback);                               //This function should log the new state to the console.
     };
 
-    const getSubscribers = ()=>{
+    const notifySubscribers = ()=>{
         subscribers.forEach(callback => callback(getState()));
     };
 
@@ -60,4 +62,4 @@ const createStore = ()=>{
 
 };
 
-const store = createStore();
+const store = createStore(); // 
