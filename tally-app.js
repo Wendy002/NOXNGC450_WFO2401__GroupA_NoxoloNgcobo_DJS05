@@ -65,4 +65,10 @@ const createStore = ()=>{
 const store = createStore(); // create create store obj
 
 store.subscribe(state => console.log('Changed state: ', state)); // changes state of count everytime dispatch is called
-console.log('Initial state: ', store.getState());   // Output: { count: 0 }
+
+//check if document is open
+if(!document.hidden){
+    console.log('Initial state: ', store.getState());   // Output: { count: 0 }
+
+}
+
