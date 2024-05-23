@@ -19,7 +19,7 @@
 
 // initialise factory function createStore()
 const createStore = ()=>{
-    const state= {};
+    const state= {count: 0};
     const subscribers = [];
     
     const getState = () => state;    // Returns the current state
@@ -65,4 +65,4 @@ const createStore = ()=>{
 const store = createStore(); // create create store obj
 
 store.subscribe(state => console.log('Changed state: ', state)); // changes state of count everytime dispatch is called
-console.log('Initial state: ',store.getState());   // Output: { count: 0 }
+console.log('Initial state: ', store.getState());   // Output: { count: 0 }
