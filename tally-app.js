@@ -19,7 +19,7 @@ import {createStore } from "./store.js";
 
 const addBtn = document.getElementById('add');
 const subtractBtn = document.getElementById('subtract');
-const resetBtn = document.getElementById('reset');
+const resetBtn = document.getElementById('Reset');
 
 
 const store = createStore(); // create create store obj
